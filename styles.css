@@ -5,7 +5,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f8f0ff;
+    background-image: url('https://i.pinimg.com/originals/b0/0b/5d/b00b5d840854e0a0042667e89eb2f5f3.jpg'); /* URL da imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
     font-family: 'Arial', sans-serif;
     color: #333;
 }
