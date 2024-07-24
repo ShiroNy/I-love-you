@@ -130,8 +130,8 @@ h1 {
 /* Adicione isso ao seu arquivo styles.css */
 .audio-controls {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -150,4 +150,3 @@ h1 {
     width: 100px;
     margin: 0;
 }
-
