@@ -71,12 +71,19 @@
                 <div class="present"></div>
                 <div class="message"></div>
             </div>
-             <audio id="background-music" src="https://shirony.github.io/I-love-you/audio/calum.mp3" autoplay loop></audio>
-    <div class="audio-controls">
-        <button id="play-pause-btn">Pause</button>
-        <button id="mute-btn">Mute</button>
-        <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
-    </div>
+              <!-- Player de áudio -->
+    <audio id="background-music" src="https://shirony.github.io/I-love-you/audio/calum.mp3" loop></audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            audio.play().catch(function(error) {
+                // Se autoplay falhar, exiba um botão para iniciar a música
+                console.log('Autoplay não permitido, adicione um botão para iniciar a música.');
+            });
+        });
+    </script>
+
         </div>
     </div>
     <script src="script.js"></script>
