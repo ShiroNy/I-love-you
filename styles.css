@@ -119,3 +119,7 @@ h1 {
 .grid.open .box:not(.open) {
     transform: translateX(150px); /* Afastar caixas não abertas para a direita */
 }
+
+.grid.open .box:nth-child(n+6) {
+    transform: translateY(150px); /* Move as caixas da segunda linha para baixo */
+}
