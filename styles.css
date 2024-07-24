@@ -26,14 +26,15 @@ h1 {
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
     justify-items: center;
+    transition: all 0.5s ease-in-out; /* Suavizar o afastamento das caixas */
 }
 
 .box {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, width 0.5s ease-in-out;
     perspective: 1000px;
 }
 
@@ -41,8 +42,12 @@ h1 {
     transform: scale(1.1);
 }
 
+.box.open {
+    width: 300px; /* Expande a caixa ao ser aberta */
+}
+
 .lid {
-    width: 100px;
+    width: 120px;
     height: 30px;
     background-color: #ff69b4;
     position: absolute;
@@ -56,18 +61,18 @@ h1 {
 
 .ribbon {
     width: 20px;
-    height: 100px;
+    height: 120px;
     background-color: #c71585;
     position: absolute;
     top: 0;
-    left: 40px;
+    left: 50px;
     border-radius: 5px;
     z-index: 1;
 }
 
 .present {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #ffb6c1;
     position: absolute;
     bottom: 0;
@@ -86,22 +91,31 @@ h1 {
     transform: rotateX(-90deg); /* Move a tampa para trás */
 }
 
-.box.open .present {
-    opacity: 1;
-}
-
 .message {
     position: absolute;
     bottom: -50px;
     left: 0;
     width: 100%;
+    padding: 20px;
+    background-color: #fff5f8;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 0.9em;
-    color: #ff69b4;
+    font-size: 1.2em;
+    color: #d147a3;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s, bottom 0.5s; /* Adiciona transição ao mover a mensagem */
+    z-index: -1;
+    transform: scale(0.8);
 }
 
 .box.open .message {
     opacity: 1;
+    bottom: -120px; /* Muda a posição para melhor visibilidade */
+    z-index: 0;
+    transform: scale(1); /* Escala para o tamanho original */
+}
+
+.grid.open .box:not(.open) {
+    transform: translateX(150px); /* Afastar caixas não abertas para a direita */
 }
