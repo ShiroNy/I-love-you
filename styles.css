@@ -30,10 +30,11 @@ h1 {
 
 .box {
     width: 100px;
-    height: 150px;
+    height: 100px;
     position: relative;
     cursor: pointer;
     transition: transform 0.3s;
+    perspective: 1000px;
 }
 
 .box:hover {
@@ -42,36 +43,65 @@ h1 {
 
 .lid {
     width: 100px;
-    height: 20px;
+    height: 30px;
     background-color: #ff69b4;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 5px 5px 0 0;
-    transition: top 0.5s;
+    transition: transform 0.5s;
+    transform-origin: top;
+    transform-style: preserve-3d;
+}
+
+.ribbon {
+    width: 20px;
+    height: 100px;
+    background-color: #c71585;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    border-radius: 5px;
+    z-index: 1;
 }
 
 .present {
     width: 100px;
-    height: 130px;
+    height: 100px;
     background-color: #ffb6c1;
     position: absolute;
     bottom: 0;
     left: 0;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s;
 }
 
 .box.open .lid {
-    top: -30px; /* Move a tampa para cima */
+    transform: rotateX(-90deg); /* Move a tampa para trás */
 }
 
 .box.open .present {
+    opacity: 1;
+}
+
+.message {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #ff69b4;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.box.open .message {
     opacity: 1;
 }
