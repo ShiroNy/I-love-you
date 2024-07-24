@@ -22,23 +22,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const playPauseBtn = document.getElementById('play-pause-btn');
     const muteBtn = document.getElementById('mute-btn');
     const volumeControl = document.getElementById('volume-control');
-
-    playPauseBtn.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
-            playPauseBtn.textContent = 'Pause';
-        } else {
-            audio.pause();
-            playPauseBtn.textContent = 'Play';
-        }
-    });
-
-    muteBtn.addEventListener('click', () => {
-        audio.muted = !audio.muted;
-        muteBtn.textContent = audio.muted ? 'Unmute' : 'Mute';
-    });
-
-    volumeControl.addEventListener('input', () => {
-        audio.volume = volumeControl.value;
-    });
-});
