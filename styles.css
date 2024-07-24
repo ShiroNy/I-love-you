@@ -126,6 +126,7 @@ h1 {
 .grid.open .box:nth-child(n+6) {
     transform: translateY(150px); /* Move as caixas da segunda linha para baixo */
 }
+
 /* Adicione isso ao seu arquivo styles.css */
 .audio-controls {
     position: fixed;
