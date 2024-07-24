@@ -6,8 +6,7 @@ function openBox(element) {
 
         // Mostra a mensagem da caixa
         const message = element.getAttribute('data-message');
-        setTimeout(() => {
-            alert(message); // Exibe a mensagem como um alerta
-        }, 500); // Aguarda meio segundo para a animação
+        const messageElement = element.querySelector('.message');
+        messageElement.textContent = message; // Insere a mensagem na página
     }
 }
