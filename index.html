@@ -71,15 +71,18 @@
                 <div class="present"></div>
                 <div class="message"></div>
             </div>
-              <!-- Player de áudio -->
+                  <!-- Player de áudio -->
     <audio id="background-music" src="https://shirony.github.io/I-love-you/audio/calum.mp3" loop></audio>
     
+    <!-- Botão para iniciar a música -->
+    <button onclick="document.getElementById('background-music').play()">Play Música</button>
+    
     <script>
+        // Opção para iniciar automaticamente, se permitido pelo navegador
         document.addEventListener('DOMContentLoaded', function() {
             var audio = document.getElementById('background-music');
             audio.play().catch(function(error) {
-                // Se autoplay falhar, exiba um botão para iniciar a música
-                console.log('Autoplay não permitido, adicione um botão para iniciar a música.');
+                console.log('Autoplay não permitido.');
             });
         });
     </script>
