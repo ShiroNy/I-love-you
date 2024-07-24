@@ -5,10 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('https://4kwallpapers.com/images/wallpapers/i-love-you-kawaii-3840x2160-11020.jpg'); /* URL da imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Não repete a imagem */
+    background-color: #f8f0ff;
     font-family: 'Arial', sans-serif;
     color: #333;
 }
@@ -126,4 +123,3 @@ h1 {
 .grid.open .box:nth-child(n+6) {
     transform: translateY(150px); /* Move as caixas da segunda linha para baixo */
 }
-
